@@ -133,7 +133,7 @@ Sistem, Claude Code hooks konfigürasyonu (`settings.json`) üzerinden her araç
 │       └── lint_check.sh
 │
 └── .shared/                     # UI/UX kaynakları (CSV data)
-
+```
 
 ## Piyasadaki Diğer AI Çözümlerinden Farkı
 
