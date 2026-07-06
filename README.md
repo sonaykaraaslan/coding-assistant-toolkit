@@ -133,3 +133,30 @@ Sistem, Claude Code hooks konfigürasyonu (`settings.json`) üzerinden her araç
 │       └── lint_check.sh
 │
 └── .shared/                     # UI/UX kaynakları (CSV data)
+
+
+## Piyasadaki Diğer AI Çözümlerinden Farkı
+
+| Kriter | Standart AI Asistanları (Cursor, Copilot, Jenerik LLM) | BDK (Shadow + Performans Katmanlı) |
+| :--- | :--- | :--- |
+| **Çalışma Modu** | **Reaktif:** Siz prompt yazana kadar kollarını bağlar ve bekler. Geliştirme ritmini veya hata süresini takip etmez. | **Proaktif:** Siz hiçbir şey yazmasanız da ritminizi arkadan izler, sıkıştığınızı ve döngüye girdiğinizi hisseder. |
+| **Hafıza & Korelasyon** | **Stateless:** Her prompt yeni bir metin kutusudur. Geçmiş dosya değişikliklerini ve terminal hatalarını bağdaştıramaz. | **Stateful:** `shadow_state.json` ile "3 kez aynı hatayı aldı" veya "15 dosya değişti ama test koşmadı" ilişkisini kurar. |
+| **Geliştirme Kapsamı** | Yalnızca kod yazar; API dökümantasyonunu, canlı Swagger şemasını veya mock sunucusunu eksik bırakır ya da akıl edemez. | Backend yazıldığı an `Swagger/OpenAPI` şemasını üretir, paralel frontend geliştirmeleri için `/api-mock` sunucusu açar. |
+| **İş Risk Analizi** | Sadece kodun çalışıp çalışmadığına bakar. Bulut faturası (FinOps) veya KVKK/GDPR cezaları ilgi alanı dışındadır. | `cost-optimizer` ve `compliance-auditor` ile "Bu log seviyesi faturayı patlatır" veya "Açık rıza yok, ceza yeriz" diyerek koruma sağlar. |
+| **Sistem Doğrulaması** | **Kör Güven:** Ajanların yönlendirme algoritmalarının doğruluğu manuel veya tahmini test edilir. | **Matematiksel Güven:** `evals/` altındaki test caseleri sayesinde, yönlendirme algoritmaları her commit'te otomatik doğrulanır. |
+
+---
+
+## Piyasadaki Diğer AI Çözümlerinden Farkı
+
+BDK Proactive AI Developer Platform sayesinde AI destekli yazılım geliştirme süreci; **daha proaktif, daha güvenli, daha ölçülebilir, üretim odaklı ve daha az halüsinasyon riski taşıyan sistematik bir yapıya dönüşür.** BDK artık yalnızca komut bekleyen bir araç kutusu değil; geliştiricinin çalışma ritmini anlayan, riskleri sezen ve doğru zamanda doğru workflow’u öneren akıllı bir ekip arkadaşıdır.
+
+---
+
+**Sonay Karaaslan**  
+Computer Engineering graduate focused on AI-assisted software development, backend systems, developer tooling and intelligent automation.
+
+---
+##  Lisans
+
+Bu proje kişisel öğrenme, araştırma ve geliştirme amacıyla hazırlanmıştır. Lisans bilgisi daha sonra güncellenebilir.
